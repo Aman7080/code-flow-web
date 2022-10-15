@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "@components/layout";
 import Container from "@components/container";
+import Comments from '@components/comments';
+import Form from '@components/form';
 import { useRouter } from "next/router";
 import client, {
   getClient,
@@ -65,14 +67,14 @@ export default function Post(props) {
               url: `${siteConfig?.url}/post/${post.slug.current}`,
               title: `${post.title} - ${siteConfig.title}`,
               description: post.excerpt || "",
-              images: [
-                {
-                  url: GetImage(post?.mainImage).src || ogimage,
-                  width: 800,
-                  height: 600,
-                  alt: ""
-                }
-              ],
+              // images: [
+              //   {
+              //     url: GetImage(post?.mainImage).src || ogimage,
+              //     width: 800,
+              //     height: 600,
+              //     alt: ""
+              //   }
+              // ],
               site_name: siteConfig.title
             }}
             twitter={{
@@ -171,6 +173,10 @@ export default function Post(props) {
             <article className="max-w-screen-md mx-auto ">
               <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
                 {post.body && <PortableText value={post.body} />}
+              </div>
+              <div>
+              <Comments comments={post.comments} />
+              <Form _id={post._id} />
               </div>
               <div className="flex justify-center mt-7 mb-7">
                 <Link href="/">

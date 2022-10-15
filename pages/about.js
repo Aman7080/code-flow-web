@@ -26,13 +26,13 @@ export default function About({ authors, siteconfig }) {
               <div
                 key={author._id}
                 className="relative overflow-hidden rounded-md aspect-square odd:translate-y-10 odd:md:translate-y-16">
-                <Image
+                {/* <Image
                   {...imgprops}
                   alt={author.name || " "}
                   layout="fill"
                   objectFit="cover"
                   sizes="(max-width: 320px) 100vw, 320px"
-                />
+                /> */}
               </div>
             );
           })}

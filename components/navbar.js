@@ -14,8 +14,8 @@ export default function Navbar(props) {
       href: "/"
     },
     {
-      label: "About",
-      href: "/about"
+      label: "Test",
+      href: "/test"
     },
     {
       label: "Contact",
