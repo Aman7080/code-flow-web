@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
 import GetImage from "@utils/getImage";
@@ -36,8 +37,8 @@ export default function Layout(props) {
           site_name: props.title
         }}
         twitter={{
-          handle: "@surjithctly",
-          site: "@surjithctly",
+          handle: "@metalovia",
+          site: "@metalovia",
           cardType: "summary_large_image"
         }}
       />
@@ -47,6 +48,7 @@ export default function Layout(props) {
         <div>{children}</div>
 
         <Footer {...props} />
+       
       </div>
     </>
   );

@@ -5,18 +5,21 @@ import Router from "next/router";
 import {useState} from "react";
 import Loader from "@components/loader";
 
+
 function MyApp({ Component, pageProps }) {
   const [loading,setLoading] = useState(false);
   Router.events.on("routeChangeStart",(url)=>{
     setLoading(true);
+    console.log("Route changing");
   })
   Router.events.on("routeChangeComplete",(url)=>{
     setLoading(false);
+    console.log("Route change complete");
   })
   return (
     <ThemeProvider attribute="class">
-      {loading && <Loader/>}
-      <Component {...pageProps} />
+      {loading ? (<Loader/>):( <Component {...pageProps} />)}
+     
     </ThemeProvider>
   );
 }

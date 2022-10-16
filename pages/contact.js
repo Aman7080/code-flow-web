@@ -6,10 +6,10 @@ import { useForm } from "react-hook-form";
 import useWeb3Forms from "use-web3forms";
 import { configQuery } from "@lib/groq";
 import {
-  LocationMarkerIcon,
-  MailIcon,
-  PhoneIcon
-} from "@heroicons/react/outline";
+  EnvelopeIcon,
+  DevicePhoneMobileIcon,
+  MegaphoneIcon
+} from "@heroicons/react/24/outline";
 export default function Contact({ siteconfig }) {
   const {
     register,
@@ -25,7 +25,7 @@ export default function Contact({ siteconfig }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState(false);
   // Please update the Access Key in the Sanity CMS - Site Congig Page
-  const apiKey = siteconfig?.w3ckey || "YOUR_ACCESS_KEY_HERE";
+  const apiKey = "b5a28abd-8329-49ac-9235-cc6c6e8f97d0";
 
   const { submit: onSubmit } = useWeb3Forms({
     apikey: apiKey,
@@ -41,7 +41,6 @@ export default function Contact({ siteconfig }) {
       setMessage(msg);
     }
   });
-
   return (
     <Layout {...siteconfig}>
       <Container>
@@ -55,31 +54,31 @@ export default function Contact({ siteconfig }) {
         <div className="grid my-10 md:grid-cols-2">
           <div className="my-10">
             <h2 className="text-2xl font-semibold dark:text-white">
-              Contact Stablo
+              Contact Me
             </h2>
             <p className="max-w-sm mt-5">
               Have something to say? We are here to help. Fill up the
-              form or send email or call phone.
+              form or send email. Feel free to say anything...
             </p>
 
             <div className="mt-5">
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
-                <LocationMarkerIcon className="w-4 h-4" />
+                <MegaphoneIcon  className="w-5 h-5" />
                 <span>1734 Sanfransico, CA 93063</span>
               </div>
-              {siteconfig?.email && (
+              {process.env.NEXT_PUBLIC_EMAIL_ID && (
                 <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
-                  <MailIcon className="w-4 h-4" />
-                  <a href={`mailto:${siteconfig.email}`}>
-                    {siteconfig.email}
+                  <EnvelopeIcon className="w-5 h-5" />
+                  <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_ID}`}>
+                    {process.env.NEXT_PUBLIC_EMAIL_ID}
                   </a>
                 </div>
               )}
-              {siteconfig?.phone && (
+              {process.env.NEXT_PUBLIC_PHONE && (
                 <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
-                  <PhoneIcon className="w-4 h-4" />
-                  <a href={`tel:${siteconfig.phone}`}>
-                    {siteconfig.phone}
+                  < DevicePhoneMobileIcon className="w-5 h-5" />
+                  <a href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}>
+                    {process.env.NEXT_PUBLIC_PHONE}
                   </a>
                 </div>
               )}

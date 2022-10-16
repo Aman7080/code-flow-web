@@ -5,7 +5,7 @@ import Container from "@components/container";
 import Link from "next/link";
 import Image from "next/image";
 import GetImage from "@utils/getImage";
-import { myLoader } from "@utils/all";
+
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -14,8 +14,8 @@ export default function Navbar(props) {
       href: "/"
     },
     {
-      label: "Test",
-      href: "/test"
+      label: "About",
+      href: "/about"
     },
     {
       label: "Contact",
@@ -25,19 +25,19 @@ export default function Navbar(props) {
 
   const rightmenu = [
     {
-      label: "Archive",
-      href: "/archive"
+      label: "Blogs",
+      href: "/post"
+    },
+    {
+      label: "Codes",
+      href: "/codes"
     },
     {
       label: "Github",
       href: "https://github.com/Aman7080",
       external: true
     },
-    // {
-    //   label: "Download",
-    //   href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-    //   external: true
-    // }
+    
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];

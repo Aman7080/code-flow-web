@@ -1,12 +1,13 @@
 import Container from "@components/container";
 import Layout from "@components/layout";
-import { authorsquery, configQuery } from "@lib/groq";
 import { getClient } from "@lib/sanity";
-import GetImage from "@utils/getImage";
+import { configQuery } from "@lib/groq";
 import Image from "next/image";
 import Link from "next/link";
+import imageeg from "../public/img/opengraph.jpg";
+import { myLoader } from "@utils/all";
 
-export default function About({ authors, siteconfig }) {
+export default function About({ siteconfig }) {
   return (
     <Layout {...siteconfig}>
       <Container>
@@ -17,39 +18,30 @@ export default function About({ authors, siteconfig }) {
           <p className="text-lg">We are a small passionate team.</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 mt-6 mb-16 md:mt-16 md:mb-32 md:gap-16">
-          {authors.slice(0, 3).map(author => {
-            const { width, height, ...imgprops } = GetImage(
-              author?.image
-            );
-            return (
-              <div
-                key={author._id}
-                className="relative overflow-hidden rounded-md aspect-square odd:translate-y-10 odd:md:translate-y-16">
-                {/* <Image
-                  {...imgprops}
-                  alt={author.name || " "}
-                  layout="fill"
-                  objectFit="cover"
-                  sizes="(max-width: 320px) 100vw, 320px"
-                /> */}
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-6  mt-6 mb-12 md:mt-16 md:mb-20 md:gap-16">
+          <div className="col-start-2 col-span-4">
+            <Image
+              src={imageeg}
+              loader={myLoader}
+              alt="image"
+              layout="responsive"
+              objectFit="cover"
+              sizes="(max-width: 320px) 100vw, 320px"
+            />
+          </div>
         </div>
 
-        <div className="mx-auto prose text-center dark:prose-invert mt-14">
+        <div className="mx-auto prose text-center dark:prose-invert mt-10">
           <p>
-            We provide real-time connectivity to enable software
-            providers and financial institutions to build integrated
-            products for their small business customers.
+            We provide real-time connectivity to enable software providers and
+            financial institutions to build integrated products for their small
+            business customers.
           </p>
           <p>
-            Our API infrastructure is leveraged by clients ranging
-            from lenders to corporate card providers and business
-            forecasting tools, with use cases including automatic
-            reconciliation, business dashboarding, and loan
-            decisioning.
+            Our API infrastructure is leveraged by clients ranging from lenders
+            to corporate card providers and business forecasting tools, with use
+            cases including automatic reconciliation, business dashboarding, and
+            loan decisioning.
           </p>
           <p>
             <Link href="/contact">Get in touch</Link>
@@ -61,15 +53,12 @@ export default function About({ authors, siteconfig }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  //console.log(params);
-  const authors = await getClient(preview).fetch(authorsquery);
   const config = await getClient(preview).fetch(configQuery);
   return {
     props: {
-      authors: authors,
       siteconfig: { ...config },
-      preview
+      preview,
     },
-    revalidate: 100
+    revalidate: 100,
   };
 }
