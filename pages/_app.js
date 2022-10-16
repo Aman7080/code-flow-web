@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps }) {
   const [loading,setLoading] = useState(false);
   Router.events.on("routeChangeStart",(url)=>{
     setLoading(true);
-    console.log("Route changing");
+   
   })
   Router.events.on("routeChangeComplete",(url)=>{
     setLoading(false);
-    console.log("Route change complete");
+   
   })
   return (
     <ThemeProvider attribute="class">
