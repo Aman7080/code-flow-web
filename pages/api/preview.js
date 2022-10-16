@@ -1,4 +1,4 @@
-import { getPreviewPostBySlug } from '../../lib/api'
+import { getPreviewPostBySlug } from '@lib/api'
 
 export default async function preview(req, res) {
   // Check the secret and next parameters
@@ -8,7 +8,7 @@ export default async function preview(req, res) {
     !req.query.slug
   ) {
     return res.status(401).json({ message: 'Invalid token' })
-  }
+  } 
 
   // Fetch the headless CMS to check if the provided `slug` exists
   const post = await getPreviewPostBySlug(req.query.slug)
