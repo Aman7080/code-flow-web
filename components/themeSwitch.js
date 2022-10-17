@@ -1,33 +1,19 @@
 // import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-// import { SunIcon } from "@heroicons/react/outline";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
-const ThemeSwitch = () => {
-  //   const [mounted, setMounted] = useState(false);
-  //   const { resolvedTheme, setTheme } = useTheme();
+export const SideThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
-  // useEffect only runs on the client, so now we can safely show the UI
-  //   useEffect(() => {
-  //     setMounted(true);
-  //   }, []);
-
-  //   if (!mounted) {
-  //     return null;
-  //   }
-
   return (
-    <div className="inline-flex items-center">
-      {/* <SunIcon className="w-4 h-4 mr-2" /> */}
-      <select
-        name="themeSwitch"
-        value={theme}
-        onChange={e => setTheme(e.target.value)}>
-        <option value="system">System</option>
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-      </select>
+    <div className="fixed flex-row justify-center sm:hidden">
+      <div className=" bg-slate-50 dark:bg-slate-600 p-4 border border-gray-900" onClick={(e) => setTheme("dark")}>
+        <MoonIcon className=" w-8 h-8" />
+      </div>
+      <div className=" bg-slate-50 dark:bg-slate-600  p-4 border border-gray-900" onClick={(e) => setTheme("light")}>
+        <SunIcon className="w-8 h-8" /> 
+      </div>
     </div>
   );
 };
 
-export default ThemeSwitch;
+

@@ -50,7 +50,7 @@ export default function Post(props) {
                   alt: ""
                 }
               ],
-              site_name: "Stablo"
+              site_name: "Coding Flow"
             }}
             twitter={{
               cardType: "summary_large_image"
@@ -58,7 +58,7 @@ export default function Post(props) {
           />
           <Container>
             <h1 className="text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-              Archive
+              Blogs
             </h1>
             <div className="text-center">
               <p className="mt-2 text-lg">

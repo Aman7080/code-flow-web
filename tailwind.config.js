@@ -15,7 +15,8 @@ module.exports = {
       fontFamily: {
         // to change, update font in _document.js
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        stock: [defaultTheme.fontFamily.sans]
+        stock: [defaultTheme.fontFamily.sans],
+        nabla: ['Nabla', "cursive"]
       },
       aspectRatio: {
         "4/3": "4 / 3",
