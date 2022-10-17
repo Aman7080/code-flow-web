@@ -1,9 +1,9 @@
 import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
-import "../styles/prism.css";
 import Router from "next/router";
 import {useState} from "react";
 import Loader from "@components/loader";
+
 
 
 function MyApp({ Component, pageProps }) {

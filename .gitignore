@@ -44,3 +44,5 @@ next-env.d.ts
 
 # studio output
 public/studio
+
+/studio

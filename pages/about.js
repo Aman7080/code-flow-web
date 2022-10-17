@@ -4,7 +4,7 @@ import { getClient } from "@lib/sanity";
 import { configQuery } from "@lib/groq";
 import Image from "next/image";
 import Link from "next/link";
-import imageeg from "../public/img/opengraph.jpg";
+import imageeg from "../public/img/opengraph.jpg";// for  test only 
 import { myLoader } from "@utils/all";
 
 export default function About({ siteconfig }) {
