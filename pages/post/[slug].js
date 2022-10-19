@@ -67,38 +67,12 @@ export default function Post(props) {
               url: `${siteConfig?.url}/post/${post.slug.current}`,
               title: `${post.title} - ${siteConfig.title}`,
               description: post.excerpt || "",
-              // images: [
-              //   {
-              //     url: GetImage(post?.mainImage).src || ogimage,
-              //     width: 800,
-              //     height: 600,
-              //     alt: ""
-              //   }
-              // ],
               site_name: siteConfig.title
             }}
             twitter={{
               cardType: "summary_large_image"
             }}
           />
-          {/*
-          <div className="relative bg-white/20">
-            <div className="absolute w-full h-full -z-10">
-              {post?.mainImage && (
-                <Image
-                  {...GetImage(post.mainImage)}
-                  alt={post.mainImage?.alt || "Thumbnail"}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              )}
-            </div>
-            <Container className="py-48">
-              <h1 className="relative max-w-3xl mx-auto mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl after:absolute after:w-full after:h-full after:bg-white after:inset-0 after:-z-10 after:blur-2xl after:scale-150">
-                {post.title}
-              </h1>
-            </Container>
-          </div> */}
 
           <Container className="!pt-0">
             <div className="max-w-screen-md mx-auto ">
@@ -170,7 +144,7 @@ export default function Post(props) {
 
           {/* {post?.mainImage && <MainImage image={post.mainImage} />} */}
           <Container>
-            <article className="max-w-screen-md mx-auto ">
+            <article className=" mx-auto ">
               <div className="mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500">
                 {post.body && <PortableText value={post.body} />}
               </div>

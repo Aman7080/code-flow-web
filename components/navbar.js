@@ -1,6 +1,5 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import Container from "@components/container";
 import Link from "next/link";
 
 export default function Navbar(props) {
@@ -36,9 +35,8 @@ export default function Navbar(props) {
 
   return (
     <>
-      <Container className="flex">
+      <div className="flex justify-around px-8 py-5 lg:py-8 mx-auto xl:px-5 ">
         <div className=" font-nabla font-bold text-4xl justify-start items-start">
-          {" "}
           <span>Code Flow</span>
         </div>
         <nav>
@@ -46,7 +44,7 @@ export default function Navbar(props) {
             {({ open }) => (
               <>
                 <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
-                  <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-center md:w-auto md:order-none md:flex-1 ">
+                  <div className="items-center order-1 hidden w-full md:flex md:flex-row md:justify-center md:w-auto md:order-none md:flex-1 ">
                     {menu.map((item, index) => (
                       <Link
                         href={item.href}
@@ -54,7 +52,7 @@ export default function Navbar(props) {
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}
                       >
-                        <a className="px-5 py-2 text-base font-semibold text-gray-600 dark:text-gray-400 hover:text-blue-500 hover:underline dark:hover:text-cyan-300">
+                        <a className=" menuItem px-5 mx-1 py-2 text-base font-semibold text-gray-600 dark:text-gray-200">
                           {item.label}
                         </a>
                       </Link>
@@ -92,7 +90,7 @@ export default function Navbar(props) {
                     {mobilemenu.map((item, index) => (
                       <Link href={item.href} key={index}>
                         <a
-                          className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                          className="px-5 py-2 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}
                         >
@@ -106,7 +104,7 @@ export default function Navbar(props) {
             )}
           </Disclosure>
         </nav>
-      </Container>
+      </div>
     </>
   );
 }

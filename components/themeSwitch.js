@@ -1,19 +1,31 @@
-// import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
+import { SunIcon, MoonIcon,Cog8ToothIcon } from "@heroicons/react/24/outline";
 
-export const SideThemeSwitch = () => {
+export const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="fixed flex-row justify-center sm:hidden">
-      <div className=" bg-slate-50 dark:bg-slate-600 p-4 border border-gray-900" onClick={(e) => setTheme("dark")}>
-        <MoonIcon className=" w-8 h-8" />
+    <div className="flex items-end dark:text-gray-200 my-3">
+       <div
+        className="flex cursor-pointer  hover:scale-110 "
+        onClick={(e) => setTheme("system")}
+      >
+        <Cog8ToothIcon className=" w-6 h-6 mx-4" />
+        <p className="text">System</p>
       </div>
-      <div className=" bg-slate-50 dark:bg-slate-600  p-4 border border-gray-900" onClick={(e) => setTheme("light")}>
-        <SunIcon className="w-8 h-8" /> 
+      <div
+        className="flex cursor-pointer  hover:scale-110 "
+        onClick={(e) => setTheme("dark")}
+      >
+        <MoonIcon className=" w-6 h-6 mx-4" />
+        <p className="text">Dark</p>
+      </div>
+      <div
+        className="flex cursor-pointer hover:scale-110 "
+        onClick={(e) => setTheme("light")}
+      >
+        <SunIcon className="w-6 h-6 mx-4" />
+        <p>Light</p>
       </div>
     </div>
   );
 };
-
-
