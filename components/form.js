@@ -33,28 +33,19 @@ export default function Form({ _id }) {
   }
   if (hasSubmitted) {
     return (
-      <>
         <h3>Thanks for your comment!</h3>
-        <ul>
-          <li>
-            Name: {formData.name} <br />
-            Email: {formData.email} <br />
-            Comment: {formData.comment}
-          </li>
-        </ul>
-      </>
     )
   }
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full max-w-lg"
+      className=" mx-auto max-w-lg"
       disabled
     >
       <input {...register('_id')} type="hidden" name="_id" value={_id} />
       <label className="mb-5 block">
-        <span className="text-gray-700">Name</span>
+        <span className="text-gray-700 dark:text-slate-200">Name</span>
         <input
           name="name"
           {...register('name', { required: true })}
@@ -63,7 +54,7 @@ export default function Form({ _id }) {
         />
       </label>
       <label className="mb-5 block">
-        <span className="text-gray-700">Email</span>
+        <span className="text-gray-700  dark:text-slate-200">Email</span>
         <input
           name="email"
           type="email"
@@ -73,7 +64,7 @@ export default function Form({ _id }) {
         />
       </label>
       <label className="mb-5 block">
-        <span className="text-gray-700">Comment</span>
+        <span className="text-gray-700  dark:text-slate-200">Comment</span>
         <textarea
           {...register('comment', { required: true })}
           name="comment"
@@ -86,7 +77,7 @@ export default function Form({ _id }) {
       {errors.exampleRequired && <span>This field is required</span>}
       <input
         type="submit"
-        className="focus:shadow-outline rounded bg-purple-500 py-2 px-4 font-bold text-white shadow hover:bg-purple-400 focus:outline-none"
+        className="focus:shadow-outline rounded bg-blue-800 py-2 px-4 font-bold text-white shadow hover:bg-purple-400 focus:outline-none"
       />
     </form>
   )

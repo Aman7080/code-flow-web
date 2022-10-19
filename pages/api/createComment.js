@@ -11,8 +11,6 @@ const client = sanityClient(config)
 
 export default async function createComment(req, res) {
   const { _id, name, email, comment } = JSON.parse(req.body)
-  console.log("req = ",req);
-  console.log("res = ",res)
   try {
     await client.create({
       _type: 'comment',

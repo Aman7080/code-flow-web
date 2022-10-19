@@ -80,7 +80,7 @@ export default function Post(props) {
                 <CategoryLabel categories={post.categories} />
               </div>
 
-              <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+              <h1 className="mt-2 mb-3 text-4xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
                 {post.title}
               </h1>
 
