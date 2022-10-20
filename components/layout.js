@@ -1,5 +1,4 @@
-
-import React from "react"
+import React from "react";
 import Script from "next/script";
 import Head from "next/head";
 import { NextSeo } from "next-seo";

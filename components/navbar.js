@@ -37,7 +37,7 @@ export default function Navbar(props) {
     <>
       <div className="flex justify-around px-8 py-5 lg:py-8 mx-auto xl:px-5 ">
         <div className=" font-nabla font-bold text-4xl justify-start items-start">
-          <span>Code Flow</span>
+          <span>STORM BLAZER</span>
         </div>
         <nav>
           <Disclosure>
@@ -52,7 +52,7 @@ export default function Navbar(props) {
                         target={item.external ? "_blank" : ""}
                         rel={item.external ? "noopener" : ""}
                       >
-                        <a className=" menuItem px-5 mx-1 py-2 text-base font-semibold text-gray-600 dark:text-gray-200">
+                        <a className="px-5 mx-1 py-2 text-base font-semibold text-gray-600 dark:text-gray-200 hover:text-cyan-600 hover:underline dark:hover:text-cyan-400">
                           {item.label}
                         </a>
                       </Link>
@@ -105,6 +105,7 @@ export default function Navbar(props) {
           </Disclosure>
         </nav>
       </div>
+      
     </>
   );
 }
