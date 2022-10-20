@@ -48,7 +48,7 @@ export default function Post(props) {
           />
 
           {/* Adding elements here _______________________________*/}
-          <section className=" flex-col justify-center items-start p-0 min-h-screen mx-auto my-0 max-w-4xl">
+          {/* <section className=" flex-col justify-center items-start p-0 min-h-screen mx-auto my-0 max-w-4xl">
             <div className="transition delay-100 block">
               <h1 className=" text-cyan-300 font-medium font-mono mb-7 ml-1 leading-3">Hi, my name is</h1>
             </div>
@@ -84,9 +84,9 @@ export default function Post(props) {
                 Check out my course!
               </a>
             </div>
-          </section>
+          </section> */}
 
-          {/* <Container>
+          <Container>
             <div className="grid gap-10 lg:gap-10 md:grid-cols-2 ">
               {postdata.slice(0, 2).map((post) => (
                 <PostList
@@ -102,7 +102,7 @@ export default function Post(props) {
                 <PostList key={post._id} post={post} aspect="square" />
               ))}
             </div>
-          </Container> */}
+          </Container>
         </Layout>
       )}
     </>
